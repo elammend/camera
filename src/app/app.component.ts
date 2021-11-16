@@ -76,11 +76,11 @@ export class AppComponent implements OnInit {
       `height:${this.canvasHeight}px;width:${this.canvasWidth}px;overflow:hidden;background-color:red`
     );
 
-    let canvas = document.getElementById('canvas');
-    canvas.setAttribute(
-      'style',
-      `height:${this.canvasHeight}px;width:${this.canvasWidth}px;`
-    );
+    // let canvas = document.getElementById('canvas');
+    // canvas.setAttribute(
+    //   'style',
+    //   `height:${this.canvasHeight}px;width:${this.canvasWidth}px;`
+    // );
     this.cdr.detectChanges();
   };
 
@@ -135,8 +135,8 @@ export class AppComponent implements OnInit {
       this.canvasHeight / this.current.z, //need proportion
       0,
       0,
-      this.canvasWidth / 2,
-      this.canvasHeight / 2
+      this.canvasWidth,
+      this.canvasHeight
     );
     console.log(this.canvas.nativeElement.toDataURL('image/png'));
     this.captures.push(this.canvas.nativeElement.toDataURL('image/png'));

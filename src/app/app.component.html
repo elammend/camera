@@ -1,7 +1,7 @@
 <div id="app">
   <div id="container"><video #video id="video" autoplay="true"></video></div>
   <div><button id="snap" (click)="capture()">Snap Photo</button></div>
-  <canvas #canvas id="canvas"></canvas>
+  <canvas #canvas id="canvas" width="640" height="480"></canvas>
   <ul>
     <li *ngFor="let c of captures">
       <img src="{{ c }}" height="480px" width="640px" />
