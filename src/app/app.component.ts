@@ -121,10 +121,16 @@ export class AppComponent implements OnInit {
       0;
 
     console.log(
+      'original arguments',
       newX,
       newY,
       this.canvasWidth / this.current.z,
-      this.canvasHeight / this.current.z
+      this.canvasHeight / this.current.z,
+      'canvas arguments',
+      0,
+      0,
+      this.canvasWidth,
+      this.canvasHeight
     );
     const vid = document.getElementById('video');
     var context = this.canvas.nativeElement.getContext('2d').drawImage(
@@ -138,8 +144,14 @@ export class AppComponent implements OnInit {
       this.canvasWidth,
       this.canvasHeight
     );
+    const dataUrl = this.canvas.nativeElement.toDataURL('image/png');
     console.log(this.canvas.nativeElement.toDataURL('image/png'));
     this.captures.push(this.canvas.nativeElement.toDataURL('image/png'));
+    var image = new Image();
+    image.src = dataUrl;
+
+    var w = window.open('');
+    w.document.write(image.outerHTML);
   }
 
   setupHammerJs = () => {
